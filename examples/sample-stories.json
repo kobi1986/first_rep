@@ -1,0 +1,29 @@
+{
+  "stories": [
+    {
+      "title": "User Registration",
+      "description": "As a new user, I want to create an account so that I can access the application features.",
+      "acceptanceCriteria": "- User can enter email, username, and password\n- System validates email format and username uniqueness\n- Password must meet security requirements\n- User receives confirmation email\n- Account is activated after email confirmation"
+    },
+    {
+      "title": "User Login",
+      "description": "As a registered user, I want to log into my account so that I can access personalized features.",
+      "acceptanceCriteria": "- User can enter email/username and password\n- System authenticates credentials\n- User is redirected to dashboard on success\n- Failed attempts are logged and limited"
+    },
+    {
+      "title": "Password Reset",
+      "description": "As a user, I want to reset my forgotten password so that I can regain access to my account.",
+      "acceptanceCriteria": "- User can request password reset via email\n- Reset link is sent to registered email\n- Link expires after 24 hours\n- User can set new password using valid link\n- Old password is invalidated after reset"
+    },
+    {
+      "title": "Profile Management",
+      "description": "As a logged-in user, I want to update my profile information so that my account details are current. The user should be able to edit their personal information including name, email, phone number, and profile picture. Changes should be validated and saved securely.",
+      "acceptanceCriteria": "- User can edit name, email, phone, and bio\n- Email changes require verification\n- Profile picture upload with size limits\n- Changes are saved and reflected immediately\n- User can cancel changes before saving"
+    },
+    {
+      "title": "Search Functionality",
+      "description": "As a user, I want to search for content so that I can quickly find what I'm looking for.",
+      "acceptanceCriteria": "- User can enter search terms\n- Results are displayed in real-time\n- Search supports partial matches\n- Results are ranked by relevance\n- User can filter results by category"
+    }
+  ]
+}

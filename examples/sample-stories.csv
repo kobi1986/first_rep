@@ -1,0 +1,8 @@
+Title,Description,Acceptance Criteria
+User Registration,As a new user I want to create an account so that I can access the application features,User can enter email username and password. System validates email format and username uniqueness. Password must meet security requirements.
+User Login,As a registered user I want to log into my account so that I can access personalized features,User can enter email/username and password. System authenticates credentials. User is redirected to dashboard on success.
+Password Reset,As a user I want to reset my forgotten password so that I can regain access to my account,User can request password reset via email. Reset link is sent to registered email. Link expires after 24 hours.
+Profile Management,As a logged-in user I want to update my profile information so that my account details are current,User can edit name email phone and bio. Email changes require verification. Profile picture upload with size limits.
+Search Functionality,As a user I want to search for content so that I can quickly find what I'm looking for,User can enter search terms. Results are displayed in real-time. Search supports partial matches and filtering.
+Notification System,As a user I want to receive notifications about important events,User receives email and in-app notifications. User can customize notification preferences. Notifications are marked as read/unread.
+Data Export,As a user I want to export my data so that I can use it elsewhere,User can export data in multiple formats. Export includes all user-generated content. User receives download link via email.
