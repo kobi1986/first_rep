@@ -1,0 +1,23 @@
+# User Stories File
+# Format: Each epic starts with "EPIC:" followed by stories indented with "-"
+# Stories can have optional priority [High/Medium/Low] and story points {1-13}
+
+EPIC: User Authentication System
+- As a user, I want to register with email and password so that I can create an account [High] {5}
+- As a user, I want to login with my credentials so that I can access the application [High] {3}
+- As a user, I want to reset my password if I forget it so that I can regain access [Medium] {3}
+- As an admin, I want to manage user accounts so that I can maintain system security [Low] {8}
+
+EPIC: Product Catalog Management
+- As a customer, I want to browse products by category so that I can find what I need [High] {5}
+- As a customer, I want to search for products by name or description so that I can quickly locate items [High] {8}
+- As a customer, I want to view detailed product information so that I can make informed decisions [Medium] {3}
+- As an admin, I want to add new products to the catalog so that customers can purchase them [High] {5}
+- As an admin, I want to update product information so that the catalog stays current [Medium] {3}
+
+EPIC: Shopping Cart and Checkout
+- As a customer, I want to add products to my cart so that I can purchase multiple items [High] {5}
+- As a customer, I want to modify quantities in my cart so that I can adjust my order [Medium] {3}
+- As a customer, I want to remove items from my cart so that I can change my mind [Low] {2}
+- As a customer, I want to proceed through a secure checkout process so that I can complete my purchase [High] {13}
+- As a customer, I want to receive order confirmation so that I know my purchase was successful [Medium] {3}

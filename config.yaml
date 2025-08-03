@@ -1,0 +1,13 @@
+# JIRA Configuration
+jira:
+  server: "https://your-domain.atlassian.net"
+  username: "your-email@example.com"
+  api_token: "your-api-token"  # Generate from: https://id.atlassian.com/manage-profile/security/api-tokens
+  project_key: "PROJ"  # Your JIRA project key
+
+# User Stories Configuration
+stories:
+  input_file: "user_stories.txt"
+  epic_name_prefix: "Epic: "
+  story_type: "Story"
+  epic_type: "Epic"
