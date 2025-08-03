@@ -1,0 +1,46 @@
+User Registration
+As a new user, I want to create an account so that I can access the application features.
+
+Acceptance Criteria:
+- User can enter email, username, and password
+- System validates email format and username uniqueness
+- Password must meet security requirements
+- User receives confirmation email
+- Account is activated after email confirmation
+
+---
+
+User Login
+As a registered user, I want to log into my account so that I can access personalized features.
+
+Acceptance Criteria:
+- User can enter email/username and password
+- System authenticates credentials
+- User is redirected to dashboard on success
+- Failed attempts are logged and limited
+
+---
+
+Password Reset
+As a user, I want to reset my forgotten password so that I can regain access to my account.
+
+AC:
+- User can request password reset via email
+- Reset link is sent to registered email
+- Link expires after 24 hours
+- User can set new password using valid link
+- Old password is invalidated after reset
+
+---
+
+Profile Management
+As a logged-in user, I want to update my profile information so that my account details are current.
+
+The user should be able to edit their personal information including name, email, phone number, and profile picture. Changes should be validated and saved securely.
+
+Acceptance Criteria:
+- User can edit name, email, phone, and bio
+- Email changes require verification
+- Profile picture upload with size limits
+- Changes are saved and reflected immediately
+- User can cancel changes before saving
