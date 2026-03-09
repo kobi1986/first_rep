@@ -72,23 +72,27 @@ export default function MembersPanel({ members, onMembersChange }: Props) {
       <div className="add-member-form">
         <h3>Add Team Member</h3>
         <form onSubmit={handleAdd}>
-          <div className="add-member-row">
-            <div className="form-group">
-              <label>Name</label>
-              <input
-                type="text"
-                value={name}
-                onChange={e => setName(e.target.value)}
-                placeholder="e.g. Alice"
-              />
-            </div>
-            <div className="color-input-wrapper">
-              <label>Color</label>
-              <input
-                type="color"
-                value={color}
-                onChange={e => setColor(e.target.value)}
-              />
+          <div className="form-group">
+            <label>Name</label>
+            <input
+              type="text"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              placeholder="e.g. Alice"
+            />
+          </div>
+          <div className="form-group">
+            <label>Color</label>
+            <div className="color-swatches">
+              {PALETTE.map(c => (
+                <button
+                  key={c}
+                  type="button"
+                  className={`color-swatch${color === c ? ' selected' : ''}`}
+                  style={{ backgroundColor: c }}
+                  onClick={() => setColor(c)}
+                />
+              ))}
             </div>
           </div>
           {error && <p style={{ color: '#d93025', fontSize: 13, margin: '4px 0 8px' }}>{error}</p>}

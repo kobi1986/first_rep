@@ -34,38 +34,26 @@ body {
   letter-spacing: -0.3px;
 }
 
-.app-nav {
-  display: flex;
-  gap: 4px;
-}
 
-.nav-btn {
-  padding: 6px 16px;
-  border: none;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.8);
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s;
-}
-
-.nav-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-}
-
-.nav-btn.active {
-  background: rgba(255, 255, 255, 0.25);
-  color: white;
-  font-weight: 600;
-}
-
-.app-main {
+.app-body {
   flex: 1;
+  display: flex;
   overflow: hidden;
+}
+
+.calendar-col {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.members-col {
+  width: 260px;
+  flex-shrink: 0;
+  border-left: 1px solid #e8eaed;
+  background: white;
+  overflow-y: auto;
 }
 
 /* ── Calendar view ── */
@@ -404,14 +392,16 @@ body {
 
 /* ── Members panel ── */
 .members-panel {
-  padding: 24px;
-  max-width: 600px;
+  padding: 16px;
 }
 
 .members-panel h2 {
-  margin: 0 0 20px;
-  font-size: 20px;
-  font-weight: 600;
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #5f6368;
 }
 
 .members-list {
@@ -426,11 +416,10 @@ body {
 .member-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  gap: 8px;
+  padding: 7px 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
 }
 
 .member-color {
@@ -447,49 +436,48 @@ body {
 }
 
 .add-member-form {
-  background: white;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 8px;
 }
 
 .add-member-form h3 {
-  margin: 0 0 12px;
-  font-size: 15px;
+  margin: 0 0 10px;
+  font-size: 13px;
   font-weight: 600;
+  color: #5f6368;
 }
 
-.add-member-row {
-  display: flex;
-  gap: 8px;
-  align-items: flex-end;
-}
 
 .add-member-row .form-group {
   flex: 1;
   margin: 0;
 }
 
-.color-input-wrapper {
+.color-swatches {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
-.color-input-wrapper label {
-  font-size: 13px;
-  font-weight: 500;
-  color: #5f6368;
-}
-
-.color-input-wrapper input[type="color"] {
-  width: 48px;
-  height: 36px;
-  padding: 2px;
-  border: 1px solid #dadce0;
-  border-radius: 6px;
+.color-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
   cursor: pointer;
-  background: white;
+  padding: 0;
+  transition: transform 0.1s, border-color 0.1s;
+}
+
+.color-swatch:hover {
+  transform: scale(1.15);
+}
+
+.color-swatch.selected {
+  border-color: #1a1a2e;
+  transform: scale(1.15);
 }
 
 .empty-state {

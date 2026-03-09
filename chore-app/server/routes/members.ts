@@ -5,7 +5,7 @@ import { Member, CreateMemberBody } from '../../shared/types';
 const router = Router();
 
 router.get('/', (_req: Request, res: Response) => {
-  const members = db.prepare('SELECT * FROM members ORDER BY name').all() as Member[];
+  const members = db.prepare('SELECT * FROM members ORDER BY name').all() as unknown as Member[];
   res.json(members);
 });
 
@@ -20,7 +20,7 @@ router.post('/', (req: Request, res: Response) => {
     .run(name.trim(), color || '#4a90e2');
   const member = db
     .prepare('SELECT * FROM members WHERE id = ?')
-    .get(result.lastInsertRowid) as Member;
+    .get(result.lastInsertRowid) as unknown as Member;
   res.status(201).json(member);
 });
 

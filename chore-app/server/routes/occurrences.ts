@@ -29,7 +29,7 @@ router.get('/', (req: Request, res: Response) => {
        FROM chores c
        LEFT JOIN members m ON c.assignee_id = m.id`
     )
-    .all() as ChoreRow[];
+    .all() as unknown as ChoreRow[];
 
   const chores: Chore[] = rows.map(r => ({
     ...r,
@@ -38,7 +38,7 @@ router.get('/', (req: Request, res: Response) => {
 
   const occRecords = db
     .prepare('SELECT * FROM occurrences WHERE date >= ? AND date <= ?')
-    .all(start, end) as OccurrenceRow[];
+    .all(start, end) as unknown as OccurrenceRow[];
 
   const occMap = new Map<string, { id: number; done: boolean }>();
   for (const o of occRecords) {
@@ -75,7 +75,7 @@ router.post('/', (req: Request, res: Response) => {
 
   const occurrence = db
     .prepare('SELECT * FROM occurrences WHERE chore_id = ? AND date = ?')
-    .get(chore_id, date) as OccurrenceRow;
+    .get(chore_id, date) as unknown as OccurrenceRow;
   res.json({ ...occurrence, done: occurrence.done === 1 });
 });
 

@@ -20,7 +20,7 @@ function parseChoreRow(row: Record<string, unknown>): Chore {
 }
 
 router.get('/', (_req: Request, res: Response) => {
-  const rows = db.prepare(`${CHORE_SELECT} ORDER BY c.title`).all() as Record<string, unknown>[];
+  const rows = db.prepare(`${CHORE_SELECT} ORDER BY c.title`).all() as unknown as Record<string, unknown>[];
   res.json(rows.map(parseChoreRow));
 });
 
@@ -65,7 +65,7 @@ router.post('/', (req: Request, res: Response) => {
 
   const row = db
     .prepare(`${CHORE_SELECT} WHERE c.id = ?`)
-    .get(result.lastInsertRowid) as Record<string, unknown>;
+    .get(result.lastInsertRowid) as unknown as Record<string, unknown>;
   res.status(201).json(parseChoreRow(row));
 });
 
@@ -102,7 +102,7 @@ router.put('/:id', (req: Request, res: Response) => {
 
   const row = db
     .prepare(`${CHORE_SELECT} WHERE c.id = ?`)
-    .get(id) as Record<string, unknown>;
+    .get(id) as unknown as Record<string, unknown>;
   res.json(parseChoreRow(row));
 });
 
